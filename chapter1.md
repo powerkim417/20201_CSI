@@ -1,4 +1,4 @@
-# 1. Data Storage
+Data Storage
 
 ## 1.1 Bits and Their Storage(5~22)
 
@@ -147,11 +147,174 @@
 
 ## 1.4 Representing Information as Bit Patterns(41~55)
 
+<span style="color:red">추후에 할 예정</span>
+
 ## 1.5 The Binary System(56~63)
+
+2진법 기반
+
+- 양의 정수를 2진법으로 표현하는 알고리즘
+
+  1. 숫자를 2로 나누고, 그 나머지를 기록한다.
+
+  2. 몫이 0이 아니라면, 그 몫을 또 다시 2로 나누고 나머지를 기록한다.
+
+  3. 몫이 0이 되면, 기록한 나머지들을 오른쪽에서 왼쪽으로 순서대로 나열한 값이 2진법 표현이 된다.
+
+     <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200325102004034.png" alt="image-20200325102004034" style="zoom:50%;" />
+
+- 분수도 표현 가능
+
+  - Ex) 101.101 $\to 4+1+{1\over2}+{1\over8}$
 
 ## 1.6 Storing Integers(64~74)
 
+- Two's complement notation, Excess notation의 방법이 있으며, 둘 다 overflow error가 발생할 수 있다.
+
+### Two's complement notation(2의 보수)
+
+- 정수를 나타내는 가장 보편적인 방법
+
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200325171814677.png" alt="image-20200325171814677" style="zoom:80%;" />
+
+- 음의 정수(-6)를 2의 보수로 나타내는 방법
+
+  1. <u>절대값(6)</u>의 2진수 형태에서 1이 처음으로 복사될 때까지 오른쪽 값부터 그대로 복사한다. 
+
+  2. 그 이후 비트는 반대로 복사한다.
+
+     <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200325103814071.png" alt="image-20200325103814071" style="zoom: 80%;" />
+
+- 2의 보수끼리 negate(부호 전환)하는 방법(x $\to$ -x)
+
+  - 모든 비트를 invert하고 1을 더한다.
+
+- Addition & Subtraction 예시
+
+  - 일반적인 예시
+    - 0111(7) + 1110(-2) = 1 0101(5)
+    - 0111(7) - 1110(-2) = 1001(9$\equiv$-7) (overflow)
+      - 4비트가 16개 숫자를 나타낼 수 있으므로 -8~7을 벗어난 숫자인 9는 -16을 뺀 -7과 같게 표현된다.
+  - 음수의 덧셈을 이용하여 뺄셈 연산
+    - 7 - 6 = 7 + (-6) = 0111(7) + 1010(-6) = 1 0001(1)
+  - 오버플로우(result too large for finite computer word)
+    - n비트 숫자 2개를 더한다고 꼭 결과가 n비트 숫자로 표현되는 것은 아님
+    - 0111(7) + 0001(1) = 1000(8이어야 하는데.. -8)
+    - carry가 넘친다는 뜻은 아님!
+
+- Detecting overflow
+
+  - 양수와 음수를 더하는 경우는 오버플로우가 발생하지 않음
+  - 비슷한 원리로, 같은 부호의 숫자를 빼는 경우도 오버플로우가 발생하지 않음
+  - 오버플로우가 발생하는 경우
+    - (양수) + (양수) = (음수), 7 + 2 = -7
+    - (음수) + (음수) = (양수), (-4) + (-5) = 7 
+    - (양수) - (음수) = (음수), 7 - (-2) = -7
+    - (음수) - (양수) = (양수), (-4) - 5 = 7
+
+### Possible Representations
+
+- | Decimal | Unsigned | Sign Magnitude | 1's Complement | 2's Complement | Excess four(3-bit excess code) |
+  | ------- | -------- | -------------- | -------------- | -------------- | ------------------------------ |
+  | 7       | 111      |                |                |                |                                |
+  | 6       | 110      |                |                |                |                                |
+  | 5       | 101      |                |                |                |                                |
+  | 4       | 100      |                |                |                |                                |
+  | 3       | 011      | 011            | 011            | 001            | 111                            |
+  | 2       | 010      | 010            | 010            | 010            | 110                            |
+  | 1       | 001      | 001            | 001            | 001            | 101                            |
+  | 0       | 000      | 000            | 000            | 000            | 100                            |
+  | -0      |          | 100            | 111            | 000            | 100                            |
+  | -1      |          | 101            | 110            | 111            | 001                            |
+  | -2      |          | 110            | 101            | 110            | 010                            |
+  | -3      |          | 111            | 100            | 101            | 001                            |
+  | -4      |          |                |                | 100            | 000                            |
+
+- Unsigned
+
+  - 범위: 0 ~ 7 (8가지)
+  - MSB가 sign과 관련이 없음
+
+- Sign Magnitude
+
+  - 범위: -3 ~ 3 (7가지)
+  - MSB 외의 bit는 크기를 표현하고, MSB로 sign을 나타냄
+  - balance
+
+- 1's Complement
+  - 범위: -3 ~ 3 (7가지)
+  - 음수의 경우 양수의 bit를 모두 뒤집어 나타냄
+  - number of zeros
+- 2's Complement
+  - 범위: -4 ~ 3 (8가지)
+  - 음수의 경우 양수의 bit를 모두 뒤집고, 1을 더해 나타냄
+  - ease of operations
+  - CPU, ALU, Design에서 사용
+- Excess four
+  - 범위: -4 ~ 3 (8가지)
+  - Unsigned 표현에서 4를 뺀 값을 가짐
+    - 반대로, 의미하는 값에서 4를 더한 만큼 표현(Excess 4, <Bias 4>)
+  - CPU, ALU, Design에서 사용
+  - Excess eight의 경우 -8 ~ 7 (16가지)의 범위를 가지며, unsigned 표현에서 8을 뺀 값을 가짐
+
 ## 1.7 Storing Fractions(75~81)
+
+Floating-point notation: Sign bit, Mantissa(가수) field, Exponent(지수) field로 이루어짐
+
+### Normalized form
+
+$\pm d_0.d_1d_2...d_i \times10^n (d_0\neq0)$
+
+- 실수를 표현하는 방법(매우 작거나 매우 큰 숫자 포함)
+- 소수점 왼쪽에는 1~9 사이의 정수 하나만 오도록 맞춘 표현이 normalized form
+- Binary에서는 $\pm 1.xxxxxx_2\times2^{yyyy}$ 형태
+
+- 1byte(8bit) storage에 floating point를 저장할 때
+  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200327013423327.png" alt="image-20200327013423327" style="zoom: 25%;" />
+  - Exponent에는 지수의 3-bit excess code(excess 4 code)를 넣고,
+  - Mantissa에는 해당 수를 $0.1abcd..\times2^y$ 꼴로 표현했을 때 "1abc"를 저장한다.
+    - 정수부분이 0이고, 소수 첫째자리가 1이 오도록 하는 형태로 맞추기
+    - Mantissa field의 크기는 4bit 이므로 4자리를 넘는 부분은 truncate한다.
+  - Ex) Decode 10111100
+    - Sign = - (음수)
+    - Exponent = 011 $\to$ -1
+    - Mantissa = 1100 $\to$ 0.11
+    - $-0.11\times2^{-1} = -0.011 = -{3\over8}$
+  - Ex) Encode $1{1\over8}$
+    - $1 {1\over8} = 1.001 = 0.1001\times2^1$
+    - Sign = 0
+    - Exponent = 1 $\to$ 101
+    - Mantissa = 1001
+    - 01011001
+
+#### Truncation error(Round off error)
+
+- Ex) $2 {5\over8}$을 저장할 때
+  - $2 {5\over8} = 10.101 = 0.10101\times2^2$
+  - Sign = 0
+  - Exponent = 2 $\to$ 110 (3-bit excess code)
+  - Mantissa = 1010 (이후의 bit들은 truncate됨)
+
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200327014508171.png" alt="image-20200327014508171" style="zoom: 67%;" />
+
+  - 여기서 누락되는 1은 Lost bit이라고 하며, ROE(Round off error), Truncation error라고도 한다.
+  - 결국 storage에는 01101010 이 저장되며, 이를 decode하면 $2{1\over2}$가 된다.
+    - "1bit에 대한 Round off error가 발생하였다"
+
+### Floating Point Standard
+
+- IEEE standard 754-1985
+  - 1985년에 비로소 Floating Point에 대한 표현 방식의 표준이 정의됨
+- Two representations
+  - Single precision (32-bit)
+  - Double precision (64-bit)
+- Format
+  - ![image-20200327022209976](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200327022209976.png)
+  - Mantissa에 올 값으로 1+Fraction을 사용
+    - 즉, 0.xxxx 형태가 아니고 1.xxxx 형태로 변환해야 함(1을 hidden bit이라 부름)
+  - Exponent는 excess representation을 사용
+    - 실제 지수에 Bias를 더한 값이 저장됨
+    - Bias는 single precision일 때 127, double precision일 때 1203
 
 ## 1.8 Data and Programming(82)
 
