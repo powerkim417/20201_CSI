@@ -1,4 +1,4 @@
-Data Storage
+# Data Storage
 
 ## 1.1 Bits and Their Storage(5~22)
 
@@ -118,7 +118,7 @@ Data Storage
     - Static: 파워가 꺼질 때까지 데이터가 쭉 유지된다.
     - 스스로가 정보를 계속 유지하는 기능이 필요하므로 복잡한 구조의 gate로 이루어진 cell로 설계해서 low density
   - SDRAM
-    - (설명 따로 X)
+    - (설명 X)
 
 ### Measuring Memory Capacity
 
@@ -147,7 +147,83 @@ Data Storage
 
 ## 1.4 Representing Information as Bit Patterns(41~55)
 
-<span style="color:red">추후에 할 예정</span>
+### Representing Text
+
+각 character(letter, punctuation, etc.)는 unique한 bit pattern에 할당된다.
+
+- ASCII
+  - 영어만으로는 7bit의 패턴으로 표현이 가능하나, ISO에서 8bit로 확장하여 더 많은 언어를 담을 수 있게 됨
+  - 그러나 점점 더 많은 언어에 대한 표현이 필요해지고 있으며, 8bit로는 부족하게 됨
+    - 이를 보완할 수 있는 것이 unicode
+- Unicode
+  - 21-bits: represent the symbols used in languages <u>world wide</u>
+  - 16-bits: represent the symbols used in world's <u>commonly used</u> languages
+  - Ex) "Hello."를 ASCII 또는 UTF-8 encoding으로 표현![image-20200331015852232](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331015852232.png)
+    - H(48) e(65) l(6C) l(6C) o(6F) .(2E) $\to$ 48656C6C6F2E
+
+### Representing Numeric Values
+
+- Binary notation: bit를 사용해 2진법(base 2)으로 표현
+- Limitations of computer representations of numeric values
+  - Overflow: 표현할 수 있는 숫자의 범위를 벗어나는 경우(too big?)
+  - Truncation: 숫자의 값이 정확하게 표현되지 못하는 경우
+
+### Representing Images
+
+![image-20200331022538670](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331022538670.png)
+
+- 한 pixel은 3개의 색깔이 각각 8bit(00~FF)씩 표현되어 24bit
+
+- 256종류의 색(이건 8비트로 RGB가 각각 3,3,2bit 할당됐을때.. 설명 X)
+
+- Image representing techniques
+
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023429402.png" alt="image-20200331023429402" style="zoom: 50%;" />
+
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023703324.png" alt="image-20200331023703324" style="zoom:50%;" />
+
+  - Bitmap techniques
+
+    - Pixel: "picture element"
+
+    - RGB
+
+    - 확대했을 때 noise 발생
+
+      <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023744671.png" alt="image-20200331023744671" style="zoom:33%;" />
+
+    - 확장자: bmp, eps, gif, jpg, pdf, psd, tiff, png
+
+  - Vector techniques
+
+    - Shape에 대한 equation으로 그림, 시작점과 끝점이 주어지고 이에 대한 edge를 그려 표현
+
+      <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023858640.png" alt="image-20200331023858640" style="zoom: 50%;" />
+      - 확대 및 축소 시 깨끗한 이미지
+      - bitmap에 비해 scalable하다는 장점
+
+    - TrueType, PostScript 표준
+
+    - 확장자: eps, pdf, ai, svg
+
+### Representing Sound
+
+- sound는 analog인데, 이를 digital로 나타내야 하므로 sampling 과정이 필요하다
+
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331025425217.png" alt="image-20200331025425217" style="zoom:67%;" />
+
+- Digital audio signal을 듣게 되는 과정
+
+  ![image-20200331025524808](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331025524808.png)
+
+- Sampling techniques: MIDI, Digital Audio
+  - 음악을 만들 때 MIDI를 사용하는 것이 더 analog에 근접한 신호를 재생할 수 있다. (High quality recordings)
+
+|                   MIDI                    |               Digital Audio               |
+| :---------------------------------------: | :---------------------------------------: |
+| 실제 audio를 기록(Vector graphics와 유사) | Musical score를 기록(Bitmap image와 유사) |
+|             Device-dependent              |            Device-independent             |
+|               Smaller size                |                Larger size                |
 
 ## 1.5 The Binary System(56~63)
 
@@ -290,6 +366,7 @@ $\pm d_0.d_1d_2...d_i \times10^n (d_0\neq0)$
 #### Truncation error(Round off error)
 
 - Ex) $2 {5\over8}$을 저장할 때
+
   - $2 {5\over8} = 10.101 = 0.10101\times2^2$
   - Sign = 0
   - Exponent = 2 $\to$ 110 (3-bit excess code)
@@ -322,4 +399,106 @@ Python Lab 수업에서 다룸
 
 ## 1.9 Data Compression(83~88)
 
+데이터를 압축하는 알고리즘
+
+- Lossy VS. lossless
+  - Lossy는 데이터의 압축 후 해제 시 데이터의 손실이 일어나는 경우
+  - Lossless는 데이터의 압축 후 해제 시에도 데이터가 손실되지 않는 경우
+
+### Lossless
+
+- Run-length encoding
+
+  - 데이터와, 이 데이터가 반복되는 횟수를 기록
+  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331234208704.png" alt="image-20200331234208704" style="zoom:50%;" />
+
+- Frequency-dependent encoding(=Huffman code)
+
+  - 각 symbol의 <u>frequency</u>를 이용해 variable rate prefix code를 만듦
+    - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331234420285.png" alt="image-20200331234420285" style="zoom: 80%;" />
+      - 각 symbol은 binary string에 매핑됨
+        - 예시에서는 A=0, B=10, C=111, D=110
+      - 더 자주 등장하는 symbol이 더 짧은 code를 갖도록
+        - 예시에서는 A가 가장 자주 사용되는듯
+        - 영어에서는 e, t, a, i가 frequency가 높아 더 짧은 code를 가지고, z, q, x가 frequency가 낮아 더 긴 code를 갖게 됨
+      - 어떤 code도 다른 code의 prefix가 되면 안됨
+
+- Relative encoding
+
+  - (설명 X)
+
+- Dictionary encoding(=LZW Encoding)
+
+  - Dictionary containing the Basic Blocks from which the message is constructed but <u>as larger units</u> are found in the message.
+
+    - 가급적이면 큰 덩어리를 코드화 시키는 방식?
+
+  - Ex 1)
+
+    ![image-20200401004532656](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200401004532656.png)
+
+    - Encoding
+      1. 처음 4개의 문자를 통해 X=1, Y=2, _(blank)=3 으로 table이 채워짐
+      2. <u>Blank가 등장하면 그 전의 덩어리를 larger unit으로 계산함</u>
+         - XYX = 4
+      3. 그러면 이후의 XYX들은 모두 4로 encoding된다.
+      4. 121343434
+    - Decoding
+      1. encode된 메시지와 table을 토대로 decode한다.
+      2. XYX_XYX_XYX_XYX(**same as original input string**)
+
+  - Ex 2)
+
+    ![image-20200401005150186](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200401005150186.png)
+
+### Lossy
+
+data가 약간의 손실이 있어도 정보를 전달하는 데 문제가 없을 때 사용하는 기법
+
+Ex) Multimedia, audio, graphics, ...
+
+- Compressing Images
+  - GIF: cartoon
+  - JPEG: photograph
+  - TIFF: image archiving
+- Compressing Audio and video
+  - MPEG(Motion Picture Experts Group)
+    - High-Definition TV broadcasting
+    - Video conferencing
+  - MP3(within MPEG)
+    - Take advantage of the property of the human ear, removing these details that human ear cannot perceive
+      - 사람의 귀에서 구분하지 못할 정도의 선에서 data를 remove하여 optimize
+
 ## 1.10 Communications Errors(89~93)
+
+### Error Detecting
+
+- Parity bits(even VS. odd)
+  - Ex) ASCII(8 bits) codes에서의 odd parity
+    - pattern에 <u>총 홀수 개의 1</u>이 들어있도록 parity bit(가장 왼쪽)를 set<img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200330103107395.png" alt="image-20200330103107395" style="zoom: 33%;" />
+    - ASCII code로 'A'는 01000001로, 짝수 개의 1이 있으므로 parity bit를 1로 설정해 전체 pattern이 101000001이 된다.
+    - ASCII code로 'F'는 01000110로, 홀수 개의 1이 있으므로 parity bit를 0으로 설정해 전체 pattern이 001000110이 된다.
+- Checkbytes
+  - (설명 X)
+
+### Error Correcting
+
+detection of errors + reconstruction of the original error-free data
+
+- Hamming code(error-correcting code)
+
+  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200330103416990.png" alt="image-20200330103416990" style="zoom: 25%;" />
+
+  - Any 2 patterns are separated by a Hamming Distance of at least 3
+
+    - hamming distance가 최소 3이 되도록 설계해야 함
+      - Hamming distance: 각 위치의 bit를 비교했을 때 서로 다른 위치의 갯수
+    - A와 B의 hamming distance는 4, A와 C의 hamming distance는 3, D와 E의 hamming distance는 4, ...
+
+  - Ex) Pattern "010100"을 수신한 경우
+
+    <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200401011123644.png" alt="image-20200401011123644" style="zoom:67%;" />
+
+    - 일단 010100은 illegal pattern. 즉, error detected
+    - Original pattern을 찾기 위해 각 character들과의 hamming distance를 모두 비교하고, 가장 distance가 작은 character를 찾는다. (그 character가 original pattern일 가능성이 가장 높으므로)
+    - D의 hamming distance가 가장 짧으므로 수신한 pattern "010100"은 "011100"(D)로 correction할 수 있다.
