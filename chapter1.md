@@ -117,8 +117,7 @@
     - Low density, high power, expensive, **fast**
     - Static: 파워가 꺼질 때까지 데이터가 쭉 유지된다.
     - 스스로가 정보를 계속 유지하는 기능이 필요하므로 복잡한 구조의 gate로 이루어진 cell로 설계해서 low density
-  - SDRAM
-    - (설명 X)
+  - ~~SDRAM~~
 
 ### Measuring Memory Capacity
 
@@ -174,7 +173,7 @@
 
 - 한 pixel은 3개의 색깔이 각각 8bit(00~FF)씩 표현되어 24bit
 
-- 256종류의 색(이건 8비트로 RGB가 각각 3,3,2bit 할당됐을때.. 설명 X)
+- 256종류의 색~~(이건 8비트로 RGB가 각각 3,3,2bit 할당됐을때..)~~
 
 - Image representing techniques
 
@@ -217,6 +216,7 @@
   ![image-20200331025524808](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331025524808.png)
 
 - Sampling techniques: MIDI, Digital Audio
+  
   - 음악을 만들 때 MIDI를 사용하는 것이 더 analog에 근접한 신호를 재생할 수 있다. (High quality recordings)
 
 |                   MIDI                    |               Digital Audio               |
@@ -393,9 +393,7 @@ $\pm d_0.d_1d_2...d_i \times10^n (d_0\neq0)$
     - 실제 지수에 Bias를 더한 값이 저장됨
     - Bias는 single precision일 때 127, double precision일 때 1203
 
-## 1.8 Data and Programming(82)
-
-Python Lab 수업에서 다룸
+## ~~1.8 Data and Programming(82)~~
 
 ## 1.9 Data Compression(83~88)
 
@@ -423,9 +421,7 @@ Python Lab 수업에서 다룸
         - 영어에서는 e, t, a, i가 frequency가 높아 더 짧은 code를 가지고, z, q, x가 frequency가 낮아 더 긴 code를 갖게 됨
       - 어떤 code도 다른 code의 prefix가 되면 안됨
 
-- Relative encoding
-
-  - (설명 X)
+- ~~Relative encoding~~
 
 - Dictionary encoding(=LZW Encoding)
 
@@ -478,8 +474,7 @@ Ex) Multimedia, audio, graphics, ...
     - pattern에 <u>총 홀수 개의 1</u>이 들어있도록 parity bit(가장 왼쪽)를 set<img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200330103107395.png" alt="image-20200330103107395" style="zoom: 33%;" />
     - ASCII code로 'A'는 01000001로, 짝수 개의 1이 있으므로 parity bit를 1로 설정해 전체 pattern이 101000001이 된다.
     - ASCII code로 'F'는 01000110로, 홀수 개의 1이 있으므로 parity bit를 0으로 설정해 전체 pattern이 001000110이 된다.
-- Checkbytes
-  - (설명 X)
+- ~~Checkbytes~~
 
 ### Error Correcting
 
