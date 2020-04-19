@@ -1,4 +1,4 @@
-# Data Storage
+# 1. Data Storage
 
 ## 1.1 Bits and Their Storage(5~22)
 
@@ -14,7 +14,7 @@
     - AND OR XOR NOT
     - Abstraction 단계 중 Gate Level Design에 사용됨
 
-    <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200318111108504.png" alt="image-20200318111108504" style="zoom:67%;" />
+    <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200318111108504.png" alt="image-20200318111108504" style="zoom:67%;" /> 
 
 - Bit pattern(010010110....)은 정보를 표현할 떄 사용됨(Ex. 숫자, 문자열, 이미지, 소리 등)
 
@@ -26,18 +26,18 @@
   - VLSI(Very Large Scale Integration), 즉 초 대규모 집적회로에 쓰임
     - CMOS의 N채널 트랜지스터와 P채널 트랜지스터
       - N채널이 그대로이고, P채널은 반대로(끝에 작은 동그라미 붙음)
-      - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200321010119242.png" alt="image-20200321010119242" style="zoom:33%;" />
-  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200321003106540.png" alt="image-20200321003106540"/>
+      - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200321010119242.png" alt="image-20200321010119242" style="zoom:33%;" /> 
+  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200321003106540.png" alt="image-20200321003106540"/> 
 - 각 게이트의 구조(N채널, P채널로 이루어진)
   - NAND 게이트(N채널 2개, P채널 2개)
-    - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200321010623488.png" alt="image-20200321010623488" style="zoom:80%;" />
+    - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200321010623488.png" alt="image-20200321010623488" style="zoom:80%;" /> 
     - out으로 5V가 전달되면 1, 0V가 전달되면 0
     - in이 각각 1,0인 경우는 위가 병렬이라 5V는 전달되고, 아래는 직렬이라 0V는 전달이 안되므로 결과적으로 5V가 전달되어 1
   - NOR 게이트(N채널 2개, P채널 2개)
-    - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200321010727997.png" alt="image-20200321010727997" style="zoom:80%;" />
+    - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200321010727997.png" alt="image-20200321010727997" style="zoom:80%;" /> 
     - NAND 게이트와 반대로 이해하면 됨. 둘중 하나라도 1이면 아래 회로가 병렬로 연결되어 0V가 전달됨.
   - NOT 게이트(N채널 1개, P채널 1개)
-    - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200321010000061.png" alt="image-20200321010000061" style="zoom:50%;" />
+    - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200321010000061.png" alt="image-20200321010000061" style="zoom:50%;" /> 
     - 위가 ON이면(in=0) out이 1이 되고, 아래가 ON이면(in=1) out이 0이 됨
 
 ### Flip-flops (Memory Logic)
@@ -46,7 +46,7 @@
 
 - 간단한 flip-flop의 구조
 
-  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200323102142956.png" alt="image-20200323102142956" style="zoom: 25%;" />
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200323102142956.png" alt="image-20200323102142956" style="zoom: 25%;" /> 
 
   - 한 input line은 저장된 값을 1로 set하도록 사용되며, 다른 input line은 저장된 값을 0으로 set(reset)하도록 사용된다.
 
@@ -62,8 +62,8 @@
     | 1    | 1    | Not allowed                        |
 
 - RS Flip-flop
-  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200323102620514.png" alt="image-20200323102620514" style="zoom:67%;" />
-  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200323103115520.png" alt="image-20200323103115520" style="zoom:67%;" />
+  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200323102620514.png" alt="image-20200323102620514" style="zoom:67%;" /> 
+  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200323103115520.png" alt="image-20200323103115520" style="zoom:67%;" /> 
   - Q와 Q'는 서로 보수 관계여야 하는데 S=1, R=1 인 경우 Q=Q'=0이 되므로 이는 허용하지 않는다.
 
 ### Hexadecimal Notation
@@ -74,7 +74,7 @@
 
 - 16진법
 
-  ![image-20200323103417854](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200323103417854.png)
+  ![image-20200323103417854](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200323103417854.png) 
 
 ## 1.2 Main Memory(23~33)
 
@@ -94,7 +94,7 @@
   - 특정 cell에 대한 주소
   - 숫자로 이루어져 있으며, 0에서 시작하여 연속적으로 증가
 
-  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200323164222642.png" alt="image-20200323164222642" style="zoom: 67%;" />
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200323164222642.png" alt="image-20200323164222642" style="zoom: 67%;" /> 
 
 ### Memory Terminology
 
@@ -177,9 +177,9 @@
 
 - Image representing techniques
 
-  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023429402.png" alt="image-20200331023429402" style="zoom: 50%;" />
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023429402.png" alt="image-20200331023429402" style="zoom: 50%;" /> 
 
-  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023703324.png" alt="image-20200331023703324" style="zoom:50%;" />
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023703324.png" alt="image-20200331023703324" style="zoom:50%;" /> 
 
   - Bitmap techniques
 
@@ -189,7 +189,7 @@
 
     - 확대했을 때 noise 발생
 
-      <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023744671.png" alt="image-20200331023744671" style="zoom:33%;" />
+      <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023744671.png" alt="image-20200331023744671" style="zoom:33%;" /> 
 
     - 확장자: bmp, eps, gif, jpg, pdf, psd, tiff, png
 
@@ -197,23 +197,24 @@
 
     - Shape에 대한 equation으로 그림, 시작점과 끝점이 주어지고 이에 대한 edge를 그려 표현
 
-      <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023858640.png" alt="image-20200331023858640" style="zoom: 50%;" />
+      <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331023858640.png" alt="image-20200331023858640" style="zoom: 50%;" /> 
+    
       - 확대 및 축소 시 깨끗한 이미지
-      - bitmap에 비해 scalable하다는 장점
-
-    - TrueType, PostScript 표준
-
+  - bitmap에 비해 scalable하다는 장점
+    
+- TrueType, PostScript 표준
+    
     - 확장자: eps, pdf, ai, svg
 
 ### Representing Sound
 
 - sound는 analog인데, 이를 digital로 나타내야 하므로 sampling 과정이 필요하다
 
-  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331025425217.png" alt="image-20200331025425217" style="zoom:67%;" />
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331025425217.png" alt="image-20200331025425217" style="zoom:67%;" /> 
 
 - Digital audio signal을 듣게 되는 과정
 
-  ![image-20200331025524808](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331025524808.png)
+  ![image-20200331025524808](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331025524808.png) 
 
 - Sampling techniques: MIDI, Digital Audio
   
@@ -237,7 +238,7 @@
 
   3. 몫이 0이 되면, 기록한 나머지들을 오른쪽에서 왼쪽으로 순서대로 나열한 값이 2진법 표현이 된다.
 
-     <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200325102004034.png" alt="image-20200325102004034" style="zoom:50%;" />
+     <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200325102004034.png" alt="image-20200325102004034" style="zoom:50%;" /> 
 
 - 분수도 표현 가능
 
@@ -251,7 +252,7 @@
 
 - 정수를 나타내는 가장 보편적인 방법
 
-  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200325171814677.png" alt="image-20200325171814677" style="zoom:80%;" />
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200325171814677.png" alt="image-20200325171814677" style="zoom:80%;" /> 
 
 - 음의 정수(-6)를 2의 보수로 나타내는 방법
 
@@ -259,7 +260,7 @@
 
   2. 그 이후 비트는 반대로 복사한다.
 
-     <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200325103814071.png" alt="image-20200325103814071" style="zoom: 80%;" />
+     <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200325103814071.png" alt="image-20200325103814071" style="zoom: 80%;" /> 
 
 - 2의 보수끼리 negate(부호 전환)하는 방법(x $\to$ -x)
 
@@ -346,7 +347,7 @@ $\pm d_0.d_1d_2...d_i \times10^n (d_0\neq0)$
 - Binary에서는 $\pm 1.xxxxxx_2\times2^{yyyy}$ 형태
 
 - 1byte(8bit) storage에 floating point를 저장할 때
-  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200327013423327.png" alt="image-20200327013423327" style="zoom: 25%;" />
+  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200327013423327.png" alt="image-20200327013423327" style="zoom: 25%;" /> 
   - Exponent에는 지수의 3-bit excess code(excess 4 code)를 넣고,
   - Mantissa에는 해당 수를 $0.1abcd..\times2^y$ 꼴로 표현했을 때 "1abc"를 저장한다.
     - 정수부분이 0이고, 소수 첫째자리가 1이 오도록 하는 형태로 맞추기
@@ -372,7 +373,7 @@ $\pm d_0.d_1d_2...d_i \times10^n (d_0\neq0)$
   - Exponent = 2 $\to$ 110 (3-bit excess code)
   - Mantissa = 1010 (이후의 bit들은 truncate됨)
 
-  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200327014508171.png" alt="image-20200327014508171" style="zoom: 67%;" />
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200327014508171.png" alt="image-20200327014508171" style="zoom: 67%;" /> 
 
   - 여기서 누락되는 1은 Lost bit이라고 하며, ROE(Round off error), Truncation error라고도 한다.
   - 결국 storage에는 01101010 이 저장되며, 이를 decode하면 $2{1\over2}$가 된다.
@@ -386,7 +387,7 @@ $\pm d_0.d_1d_2...d_i \times10^n (d_0\neq0)$
   - Single precision (32-bit)
   - Double precision (64-bit)
 - Format
-  - ![image-20200327022209976](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200327022209976.png)
+  - ![image-20200327022209976](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200327022209976.png) 
   - Mantissa에 올 값으로 1+Fraction을 사용
     - 즉, 0.xxxx 형태가 아니고 1.xxxx 형태로 변환해야 함(1을 hidden bit이라 부름)
   - Exponent는 excess representation을 사용
@@ -408,12 +409,12 @@ $\pm d_0.d_1d_2...d_i \times10^n (d_0\neq0)$
 - Run-length encoding
 
   - 데이터와, 이 데이터가 반복되는 횟수를 기록
-  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331234208704.png" alt="image-20200331234208704" style="zoom:50%;" />
+  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331234208704.png" alt="image-20200331234208704" style="zoom:50%;" /> 
 
 - Frequency-dependent encoding(=Huffman code)
 
   - 각 symbol의 <u>frequency</u>를 이용해 variable rate prefix code를 만듦
-    - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331234420285.png" alt="image-20200331234420285" style="zoom: 80%;" />
+    - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200331234420285.png" alt="image-20200331234420285" style="zoom: 80%;" /> 
       - 각 symbol은 binary string에 매핑됨
         - 예시에서는 A=0, B=10, C=111, D=110
       - 더 자주 등장하는 symbol이 더 짧은 code를 갖도록
@@ -482,7 +483,7 @@ detection of errors + reconstruction of the original error-free data
 
 - Hamming code(error-correcting code)
 
-  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200330103416990.png" alt="image-20200330103416990" style="zoom: 25%;" />
+  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200330103416990.png" alt="image-20200330103416990" style="zoom: 25%;" /> 
 
   - Any 2 patterns are separated by a Hamming Distance of at least 3
 
@@ -492,7 +493,7 @@ detection of errors + reconstruction of the original error-free data
 
   - Ex) Pattern "010100"을 수신한 경우
 
-    <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200401011123644.png" alt="image-20200401011123644" style="zoom:67%;" />
+    <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200401011123644.png" alt="image-20200401011123644" style="zoom:67%;" /> 
 
     - 일단 010100은 illegal pattern. 즉, error detected
     - Original pattern을 찾기 위해 각 character들과의 hamming distance를 모두 비교하고, 가장 distance가 작은 character를 찾는다. (그 character가 original pattern일 가능성이 가장 높으므로)

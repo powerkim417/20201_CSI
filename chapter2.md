@@ -1,8 +1,8 @@
-# Data Manipulation
+# 2. Data Manipulation
 
 ## 2.1 Computer Architecture(3~11)
 
-![image-20200401102140258](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200401102140258.png)
+![image-20200401102140258](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200401102140258.png) 
 
 ### Machine Instruction Types
 
@@ -48,7 +48,7 @@
 
   - 그림
 
-    <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200407214606982.png" alt="image-20200407214606982" style="zoom: 33%;" />
+    <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200407214606982.png" alt="image-20200407214606982" style="zoom: 33%;" /> 
 
     - <u>Instruction data와 program data가 같은 memory(memory unit)에 저장되어 있다.</u>
       - <u>이러한 설계는 현재까지도 사용되고 있음!</u>
@@ -140,7 +140,7 @@ Instruction Encoding: 명령 → 명령어
 
 - Op-code와 Operand로 나뉨
 
-  ![image-20200409015617239](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200409015617239.png)
+  ![image-20200409015617239](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200409015617239.png) 
 
   - Op-code (4 bits)
     - Specifies <u>which operation</u> to execute
@@ -170,7 +170,7 @@ Instruction Encoding: 명령 → 명령어
 
 - OP Code 5와 6의 경우 각각 레지스터 S와 T의 값을 정수와 실수로 다르게 해석하므로 같은 값이 저장되어 있어도 연산에 사용되는 수의 실제 값이 다르다.
 
-- ![image-20200409024124307](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200409024124307.png)
+- ![image-20200409024124307](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200409024124307.png) 
 
 - Instruction Category
 
@@ -250,17 +250,17 @@ Instruction Encoding: 명령 → 명령어
 
 ### 예시
 
-<img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416022316992.png" alt="image-20200416022316992" style="zoom:50%;" />
+<img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416022316992.png" alt="image-20200416022316992" style="zoom:50%;" /> 
 
 ##### 0. Ready For execution
 
-<img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416021625417.png" alt="image-20200416021625417" style="zoom:50%;" />
+<img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416021625417.png" alt="image-20200416021625417" style="zoom:50%;" /> 
 
 - PC의 값이 A0로, 첫 instruction이 실행되기 전 모습
 
 ##### 1-1. Fetch
 
-<img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416021707468.png" alt="image-20200416021707468" style="zoom:50%;" />
+<img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416021707468.png" alt="image-20200416021707468" style="zoom:50%;" /> 
 
 - PC에서 가리키는 'A0'의 명령어(156C)를 가져와서 IR에 저장
   - IR: 156C
@@ -363,7 +363,7 @@ Logic, Rotate/Shift, Arithmetic
 
   - Ex) Rotating the bit pattern 65(hex) one bit to the right
 
-    <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416024746699.png" alt="image-20200416024746699" style="zoom: 50%;" />
+    <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416024746699.png" alt="image-20200416024746699" style="zoom: 50%;" /> 
 
     - Rotate right의 경우 bit들이 오른쪽으로 한 칸씩 이동
     - 0110 010'1'의 가장 오른쪽 bit 1의 경우 한 바퀴 돌아 가장 왼쪽으로 들어감
@@ -389,7 +389,7 @@ Logic, Rotate/Shift, Arithmetic
   - CPU가 주변기기(I/O)와 통신할 때, 주변기기와 memory의 address space를 분리하지 않고 하나의 memory space에 취급하여 배치
   - 즉, 전체 memory의 address space에 주변기기의 memory나 register를 memory로 취급하여 전체 memory의 일부분으로 특정영역에 할당하여 배치
   - <u>Main memory의 일부 address를 주변기기에 할당하는 방법!</u>
-  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416030340241.png" alt="image-20200416030340241" style="zoom: 67%;" />
+  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416030340241.png" alt="image-20200416030340241" style="zoom: 67%;" /> 
 - **Direct Memory Access(DMA)**: Main memory access by a controller over the bus ($\leftrightarrow$Memory-mapped I/O)
   - ==<u>CPU의 개입 없이</u>== 주변기기가 memory에 직접 접근하는 방식!
 - **Von Neumann Bottleneck**: Insufficient bus speed impedes performance

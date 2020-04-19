@@ -82,7 +82,7 @@
 
 - Computer science에서 알고리즘의 중심적 역할
 
-  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200319013030900.png" alt="image-20200319013030900" style="zoom:50%;" />
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200319013030900.png" alt="image-20200319013030900" style="zoom:50%;" /> 
 
   - 어떤 문제들이 알고리즘 절차를 통해 해결될 수 있는가?
   - 어떻게 하면 알고리즘에 대한 발견을 더 쉽게 할 수 있는가?
@@ -96,7 +96,7 @@
 
   - 시간 복잡도
 
-  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200319013058383.png" alt="image-20200319013058383" style="zoom: 25%;" />
+  <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200319013058383.png" alt="image-20200319013058383" style="zoom: 25%;" /> 
 
   
 
@@ -104,10 +104,12 @@
 
 문제를 어떻게 표현하느냐(추상화)
 
-- Abstraction: ???
-- Abstract tool: ???
+전체 그림을 이해하기 쉽도록
+
+- Abstraction: The distinction between the external properties of an entity and the details of the entity’s internal composition
+- ~~Abstract tool: A “component” that can be used without concern for the component’s internal properties???~~
 - Abstraction의 단계
-  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200319013157049.png" alt="image-20200319013157049" style="zoom: 33%;" />
+  - <img src="C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200319013157049.png" alt="image-20200319013157049" style="zoom: 33%;" /> 
 
 ### Creativity
 
@@ -162,13 +164,13 @@
 
 ### Ripple Carry Adder
 
-![image-20200319015116470](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200319015116470.png)
+![image-20200416213600099](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416213600099.png)
 
 ### Tree Adder
 
 - RCA보다 더 빠르게 작동하는 구조, 그러나 공간은 더 많이 차지
 
-![image-20200319015150504](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200319015150504.png)
+![image-20200416213503659](C:\Users\KJH\AppData\Roaming\Typora\typora-user-images\image-20200416213503659.png)
 
 |                    | Area Complexity | Time Complexity |
 | ------------------ | --------------- | --------------- |
