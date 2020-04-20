@@ -153,20 +153,20 @@ Instruction Encoding: 명령 → 명령어
 
 #### Simple Machine Language Instruction
 
-| OP Code<br />(Hexadecimal) | Operand | Meaning |        Description         |
-| :------------------------: | :-----: | :-----: | :------------------------: |
-|             1              |   RXY   |  LOAD   |         R ← M[XY]          |
-|             2              |   RXY   |  LOAD   | R ← XY (No memory Access)  |
-|             3              |   RXY   |  STORE  |         R → M[XY]          |
-|             4              |   0RS   |  MOVE   |           R → S            |
-|             5              |   RST   |   ADD   |         R ← S + T          |
-|             6              |   RST   |  ADDF   |     R ← S + T (Float)      |
-|             7              |   RST   |   OR    |         R ← S OR T         |
-|             8              |   RST   |   AND   |        R ← S AND T         |
-|             9              |   RST   |   XOR   |        R ← S XOR T         |
-|             A              |   R0X   | ROTATE  | Rotate R 'X bits' to right |
-|             B              |   RXY   |   JMP   |   if (R==0) then PC ← XY   |
-|             C              |   000   |  HALT   |            Stop            |
+| OP Code<br />(Hexadecimal) | Operand | Meaning |                Description                 |
+| :------------------------: | :-----: | :-----: | :----------------------------------------: |
+|             1              |   RXY   |  LOAD   |                 R ← M[XY]                  |
+|             2              |   RXY   |  LOAD   |         R ← XY (No memory Access)          |
+|             3              |   RXY   |  STORE  |                 R → M[XY]                  |
+|             4              |   0RS   |  MOVE   |                   R → S                    |
+|             5              |   RST   |   ADD   |                 R ← S + T                  |
+|             6              |   RST   |  ADDF   |             R ← S + T (Float)              |
+|             7              |   RST   |   OR    |                 R ← S OR T                 |
+|             8              |   RST   |   AND   |                R ← S AND T                 |
+|             9              |   RST   |   XOR   |                R ← S XOR T                 |
+|             A              |   R0X   | ROTATE  |         Rotate R 'X bits' to right         |
+|             B              |   RXY   |   JMP   | if (Register R == Register 0) then PC ← XY |
+|             C              |   000   |  HALT   |                    Stop                    |
 
 - OP Code 5와 6의 경우 각각 레지스터 S와 T의 값을 정수와 실수로 다르게 해석하므로 같은 값이 저장되어 있어도 연산에 사용되는 수의 실제 값이 다르다.
 

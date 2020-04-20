@@ -201,9 +201,9 @@
     
       - 확대 및 축소 시 깨끗한 이미지
   - bitmap에 비해 scalable하다는 장점
-    
+  
 - TrueType, PostScript 표준
-    
+  
     - 확장자: eps, pdf, ai, svg
 
 ### Representing Sound
@@ -487,7 +487,7 @@ detection of errors + reconstruction of the original error-free data
 
   - Any 2 patterns are separated by a Hamming Distance of at least 3
 
-    - hamming distance가 최소 3이 되도록 설계해야 함
+    - 각 symbol에 code를 대응시킬 때, hamming distance가 최소 3이 되도록 설계해야 함
       - Hamming distance: 각 위치의 bit를 비교했을 때 서로 다른 위치의 갯수
     - A와 B의 hamming distance는 4, A와 C의 hamming distance는 3, D와 E의 hamming distance는 4, ...
 
